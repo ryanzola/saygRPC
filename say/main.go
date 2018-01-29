@@ -7,12 +7,8 @@ import (
 	"log"
 	"os"
 
+	pb "github.com/ryanzola/saygRPC/api"
 	context "golang.org/x/net/context"
-
-	pb "???"
-)
-
-import (
 	grpc "google.golang.org/grpc"
 )
 

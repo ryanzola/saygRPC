@@ -7,7 +7,7 @@ import (
 	"net"
 	"os/exec"
 
-	pb "github.com/campoy/justforfunc/12-say-grpc/api"
+	pb "github.com/ryanzola/saygRPC/api"
 	"github.com/sirupsen/logrus"
 	"golang.org/x/net/context"
 	"google.golang.org/grpc"
@@ -17,8 +17,8 @@ func main() {
 	port := flag.Int("p", 8080, "port to listen to")
 	flag.Parse()
 
-	logrus.Info("listening on port %d", *port)
-	lis, err := net.Listen("tcp", fmt.Sprintf(":%d", port))
+	logrus.Infof("listening on port %d", *port)
+	lis, err := net.Listen("tcp", fmt.Sprintf(":%d", *port))
 	if err != nil {
 		logrus.Fatalf("could not listen on port %d: %v", *port, err)
 	}
